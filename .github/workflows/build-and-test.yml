@@ -37,7 +37,7 @@ jobs:
       #     path: TestResults.xcresult
 
       - name: Select Xcode Version
-        run: sudo xcode-select -switch /Applications/Xcode_16.2.app/Contents/Developer
+        run: sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
 
       # Use the shell script to build the XCFramework
       - name: Build XCFramework
@@ -63,15 +63,18 @@ jobs:
           name: GithubActiondemo
           path: build
 
+      # - name: Show Available Xcode Versions
+      #   run: ls /Applications | grep Xcode
+
       - name: Select Xcode Version
-        run: sudo xcode-select -switch /Applications/Xcode_16.2.app/Contents/Developer
+        run: sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
 
 
       # - name: Show all available destinations
       #   run: xcodebuild -scheme GithubActiondemoApp -showdestinations
 
-      - name: List available simulators
-        run: xcrun simctl list
+      # - name: List available simulators
+      #   run: xcrun simctl list
 
       - name: Boot the iPhone Simulator
         run: |
