@@ -37,7 +37,7 @@ jobs:
       #     path: TestResults.xcresult
 
       - name: Select Xcode Version
-        run: sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+        run: sudo xcode-select -switch /Applications/Xcode_16.1.app/Contents/Developer
 
       # Use the shell script to build the XCFramework
       - name: Build XCFramework
@@ -67,7 +67,7 @@ jobs:
       #   run: ls /Applications | grep Xcode
 
       - name: Select Xcode Version
-        run: sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+        run: sudo xcode-select -switch /Applications/Xcode_16.1.app/Contents/Developer
 
 
       # - name: Show all available destinations
