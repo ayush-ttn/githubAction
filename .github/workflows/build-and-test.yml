@@ -61,7 +61,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: GithubActiondemo
-          path: GithubActiondemoApp/Frameworks
+          path: build
+
+      - name: Select Xcode Version
+        run: sudo xcode-select -switch /Applications/Xcode_16.2.app/Contents/Developer
 
       - name: Run Integration Tests
         run: |
