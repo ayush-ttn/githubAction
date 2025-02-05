@@ -13,11 +13,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: List Directory Contents (Debugging Step)
-        run: ls -R
+      # - name: List Directory Contents (Debugging Step)
+      #   run: ls -R
 
-      - name: Show Available Xcode Versions
-        run: ls /Applications | grep Xcode
+      # - name: Show Available Xcode Versions
+      #   run: ls /Applications | grep Xcode
 
       #- name: Select Xcode Version
       #run: sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
