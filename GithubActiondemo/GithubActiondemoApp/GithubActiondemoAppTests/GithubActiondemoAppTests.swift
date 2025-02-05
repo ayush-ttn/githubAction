@@ -14,6 +14,7 @@ struct GithubActiondemoAppTests {
     @Test func checkIntegration() {
         let vc = ViewController()
         vc.loadViewIfNeeded()
+        
         vc.testFramework()
         #expect(true)
     }
