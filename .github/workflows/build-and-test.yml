@@ -70,9 +70,8 @@ jobs:
         run: |
           xcodebuild test \
           -scheme GithubActiondemoApp \
+          -destination "platform=iOS Simulator,name=Any iOS Simulator Device" \
           -resultBundlePath GithubActiondemoAppTestResults.xcresult
-          # -destination "platform=iOS Simulator,name=iPhone 16" \
-          
 
       - name: Upload Integration Test Results (optional)
         uses: actions/upload-artifact@v4
