@@ -53,6 +53,9 @@ jobs:
     runs-on: macos-latest
     needs: build-framework # Ensures framework is built first
 
+    permissions:
+      contents: write
+      
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
