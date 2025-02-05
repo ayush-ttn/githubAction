@@ -67,18 +67,25 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_16.2.app/Contents/Developer
 
 
-      - name: Show all available destinations
-        run: xcodebuild -scheme GithubActiondemoApp -showdestinations
+      # - name: Show all available destinations
+      #   run: xcodebuild -scheme GithubActiondemoApp -showdestinations
 
-      - name: List available simulators
-        run: xcrun simctl list
+      # - name: List available simulators
+      #   run: xcrun simctl list
+
+      - name: Boot the iPhone Simulator
+        run: |
+          UDID=$(xcrun simctl list devices | grep "iPhone 16" | grep -oE "[0-9A-F-]{36}")
+          echo "Booting Simulator with UDID: $UDID"
+          xcrun simctl boot "$UDID"
+          echo "SIMULATOR_UDID=$UDID" >> $GITHUB_ENV
 
       - name: Run Integration Tests
         run: |
           xcodebuild test \
           -scheme GithubActiondemoApp \
-          -destination "platform=iOS Simulator,name=Any iOS Simulator Device" \
-          -resultBundlePath GithubActiondemoAppTestResults.xcresult
+          -destination "platform=iOS Simulator,id=${SIMULATOR_UDID}" \
+          -resultBundlePath GithubActiondemoAppTestResults.xcresult | xcpretty
 
       - name: Upload Integration Test Results (optional)
         uses: actions/upload-artifact@v4
