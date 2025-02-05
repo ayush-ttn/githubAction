@@ -66,6 +66,10 @@ jobs:
       - name: Select Xcode Version
         run: sudo xcode-select -switch /Applications/Xcode_16.2.app/Contents/Developer
 
+
+      - name: Show all available destinations
+        run: xcodebuild -scheme GithubActiondemoApp -showdestinations
+
       - name: Run Integration Tests
         run: |
           xcodebuild test \
