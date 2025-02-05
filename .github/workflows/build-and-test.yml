@@ -70,7 +70,7 @@ jobs:
         run: |
           xcodebuild test \
           -scheme GithubActiondemoApp \
-          -destination "platform=iOS Simulator,name=iPhone 15" \
+          -destination "platform=iOS Simulator,name=iPhone 16" \
           -resultBundlePath GithubActiondemoAppTestResults.xcresult
 
       - name: Upload Integration Test Results (optional)
