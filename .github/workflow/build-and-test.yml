@@ -1,0 +1,82 @@
+name: Build and Test XCFramework
+
+on:
+  push:
+    tags:
+      - "v*" # Trigger only when a new version tag (e.g., v1.0.0) is pushed
+
+jobs:
+  build-framework:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      #- name: Select Xcode Version
+      #run: sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+
+      # Run Unit Tests for GithubActiondemo
+      # - name: Run Unit Tests
+      #   run: |
+      #     xcodebuild test \
+      #     -scheme GithubActiondemo \
+      #     -destination "platform=iOS Simulator,name=iPhone 15" \
+      #     -resultBundlePath TestResults.xcresult
+
+      # - name: Upload Unit Test Results (optional)
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: FrameworkTestResults
+      #     path: TestResults.xcresult
+
+      # Use the shell script to build the XCFramework
+      - name: Build XCFramework
+        run: ./buildFramework.sh
+
+      - name: Upload XCFramework
+        uses: actions/upload-artifact@v4
+        with:
+          name: GithubActiondemo
+          path: GithubActiondemo.xcframework
+
+  integration-test:
+    runs-on: macos-latest
+    needs: build-framework # Ensures framework is built first
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Download GithubActiondemo.xcframework
+        uses: actions/download-artifact@v4
+        with:
+          name: GithubActiondemo
+          path: GithubActiondemoApp/Frameworks
+
+      - name: Run Integration Tests
+        run: |
+          xcodebuild test \
+          -scheme GithubActiondemoApp \
+          -destination "platform=iOS Simulator,name=iPhone 15" \
+          -resultBundlePath GithubActiondemoAppTestResults.xcresult
+
+      - name: Upload Integration Test Results (optional)
+        uses: actions/upload-artifact@v4
+        with:
+          name: GithubActiondemoAppTestResults
+          path: GithubActiondemoAppTestResults.xcresult
+
+      # (Optional) Create a GitHub Release
+      - name: Zip XCFramework
+        run: zip -r GithubActiondemo.xcframework.zip GithubActiondemo.xcframework
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: GithubActiondemo.xcframework.zip
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body: "Automatically generated release for ${{ github.ref_name }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
