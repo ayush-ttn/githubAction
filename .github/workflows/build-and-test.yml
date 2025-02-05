@@ -70,12 +70,16 @@ jobs:
       # - name: Show all available destinations
       #   run: xcodebuild -scheme GithubActiondemoApp -showdestinations
 
-      # - name: List available simulators
-      #   run: xcrun simctl list
+      - name: List available simulators
+        run: xcrun simctl list
 
       - name: Boot the iPhone Simulator
         run: |
-          UDID=$(xcrun simctl list devices | grep "iPhone 16" | grep -oE "[0-9A-F-]{36}")
+          UDID=$(xcrun simctl list devices | awk -F '[()]' '/iPhone 16/ && /Shutdown/ {print $2; exit}')
+          if [ -z "$UDID" ]; then
+            echo "No matching simulator found!"
+            exit 1
+          fi
           echo "Booting Simulator with UDID: $UDID"
           xcrun simctl boot "$UDID"
           echo "SIMULATOR_UDID=$UDID" >> $GITHUB_ENV
