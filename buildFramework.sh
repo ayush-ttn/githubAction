@@ -19,8 +19,8 @@ XCFRAMEWORK_OUTPUT="${FRAMEWORK_NAME}.xcframework"
 # Clean previous build
 rm -rf "$BUILD_DIR" "$XCFRAMEWORK_OUTPUT"
 
-cd GithubActiondemo
-cd GithubActiondemo
+#cd GithubActiondemo
+#cd GithubActiondemo
 
 # Build for iOS
 xcodebuild archive \

@@ -1,0 +1,72 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "GithubActiondemo",
+    "printedName": "GithubActiondemo",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "GithubActiondemo",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "GitHubActions",
+        "printedName": "GitHubActions",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "setupAction",
+            "printedName": "setupAction()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16GithubActiondemo13GitHubActionsO11setupActionyyFZ",
+            "mangledName": "$s16GithubActiondemo13GitHubActionsO11setupActionyyFZ",
+            "moduleName": "GithubActiondemo",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:16GithubActiondemo13GitHubActionsO",
+        "mangledName": "$s16GithubActiondemo13GitHubActionsO",
+        "moduleName": "GithubActiondemo",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": []
+}
