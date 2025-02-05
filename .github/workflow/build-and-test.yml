@@ -32,6 +32,9 @@ jobs:
       #     name: FrameworkTestResults
       #     path: TestResults.xcresult
 
+      - name: Select Xcode Version
+        run: sudo xcode-select -switch /Applications/Xcode_16.app/Contents/Developer
+
       - name: Grant execution permission to build script
         run: chmod +x buildFramework.sh
 
