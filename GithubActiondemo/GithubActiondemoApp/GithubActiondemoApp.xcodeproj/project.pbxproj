@@ -11,6 +11,16 @@
 		C7782C6C2D53360800B0FABF /* GithubActiondemo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7782C6A2D53360800B0FABF /* GithubActiondemo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C7782C762D5338DD00B0FABF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7782BCE2D532E0A00B0FABF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7782BD52D532E0A00B0FABF;
+			remoteInfo = GithubActiondemoApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		C7782C6D2D53360800B0FABF /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -28,6 +38,7 @@
 /* Begin PBXFileReference section */
 		C7782BD62D532E0A00B0FABF /* GithubActiondemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubActiondemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7782C6A2D53360800B0FABF /* GithubActiondemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GithubActiondemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7782C722D5338DD00B0FABF /* GithubActiondemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubActiondemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -49,6 +60,11 @@
 			path = GithubActiondemoApp;
 			sourceTree = "<group>";
 		};
+		C7782C732D5338DD00B0FABF /* GithubActiondemoAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = GithubActiondemoAppTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +76,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C7782C6F2D5338DD00B0FABF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -67,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				C7782BD82D532E0A00B0FABF /* GithubActiondemoApp */,
+				C7782C732D5338DD00B0FABF /* GithubActiondemoAppTests */,
 				C7782C692D53360800B0FABF /* Frameworks */,
 				C7782BD72D532E0A00B0FABF /* Products */,
 			);
@@ -76,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				C7782BD62D532E0A00B0FABF /* GithubActiondemoApp.app */,
+				C7782C722D5338DD00B0FABF /* GithubActiondemoAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +139,29 @@
 			productReference = C7782BD62D532E0A00B0FABF /* GithubActiondemoApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C7782C712D5338DD00B0FABF /* GithubActiondemoAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7782C782D5338DD00B0FABF /* Build configuration list for PBXNativeTarget "GithubActiondemoAppTests" */;
+			buildPhases = (
+				C7782C6E2D5338DD00B0FABF /* Sources */,
+				C7782C6F2D5338DD00B0FABF /* Frameworks */,
+				C7782C702D5338DD00B0FABF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7782C772D5338DD00B0FABF /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C7782C732D5338DD00B0FABF /* GithubActiondemoAppTests */,
+			);
+			name = GithubActiondemoAppTests;
+			packageProductDependencies = (
+			);
+			productName = GithubActiondemoAppTests;
+			productReference = C7782C722D5338DD00B0FABF /* GithubActiondemoAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -126,6 +174,10 @@
 				TargetAttributes = {
 					C7782BD52D532E0A00B0FABF = {
 						CreatedOnToolsVersion = 16.0;
+					};
+					C7782C712D5338DD00B0FABF = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = C7782BD52D532E0A00B0FABF;
 					};
 				};
 			};
@@ -144,12 +196,20 @@
 			projectRoot = "";
 			targets = (
 				C7782BD52D532E0A00B0FABF /* GithubActiondemoApp */,
+				C7782C712D5338DD00B0FABF /* GithubActiondemoAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C7782BD42D532E0A00B0FABF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7782C702D5338DD00B0FABF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -166,7 +226,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C7782C6E2D5338DD00B0FABF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C7782C772D5338DD00B0FABF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7782BD52D532E0A00B0FABF /* GithubActiondemoApp */;
+			targetProxy = C7782C762D5338DD00B0FABF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C7782BEA2D532E0B00B0FABF /* Debug */ = {
@@ -176,6 +251,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3WNA3LZGJA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GithubActiondemoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -203,6 +279,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3WNA3LZGJA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GithubActiondemoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -342,6 +419,42 @@
 			};
 			name = Release;
 		};
+		C7782C792D5338DD00B0FABF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3WNA3LZGJA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GithubActiondemoAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GithubActiondemoApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GithubActiondemoApp";
+			};
+			name = Debug;
+		};
+		C7782C7A2D5338DD00B0FABF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3WNA3LZGJA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GithubActiondemoAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GithubActiondemoApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GithubActiondemoApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -359,6 +472,15 @@
 			buildConfigurations = (
 				C7782BEA2D532E0B00B0FABF /* Debug */,
 				C7782BEB2D532E0B00B0FABF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7782C782D5338DD00B0FABF /* Build configuration list for PBXNativeTarget "GithubActiondemoAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7782C792D5338DD00B0FABF /* Debug */,
+				C7782C7A2D5338DD00B0FABF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

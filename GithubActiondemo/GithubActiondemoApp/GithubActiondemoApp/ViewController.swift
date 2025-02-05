@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import GithubActiondemo
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
-
+    func testFramework() {
+        GitHubActions.setupAction()
+    }
 }
 

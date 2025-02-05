@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum GitHubActions {
-    static func setupAction() {
+public enum GitHubActions {
+    public static func setupAction() {
         print("The actions are being setup")
     }
 }

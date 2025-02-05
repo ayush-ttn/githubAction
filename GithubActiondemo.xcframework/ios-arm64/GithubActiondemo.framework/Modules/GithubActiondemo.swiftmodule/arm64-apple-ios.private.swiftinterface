@@ -6,3 +6,6 @@ import Swift
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+public enum GitHubActions {
+  public static func setupAction()
+}
