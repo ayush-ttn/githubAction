@@ -12,6 +12,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+
       - name: List Directory Contents (Debugging Step)
         run: ls -R
       #- name: Select Xcode Version
@@ -33,6 +34,7 @@ jobs:
 
       - name: Grant execution permission to build script
         run: chmod +x buildFramework.sh
+
       # Use the shell script to build the XCFramework
       - name: Build XCFramework
         run: ./buildFramework.sh
