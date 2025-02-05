@@ -36,6 +36,9 @@ jobs:
       #     name: FrameworkTestResults
       #     path: TestResults.xcresult
 
+      - name: Select Xcode Version
+        run: sudo xcode-select -switch /Applications/Xcode_16.2.app/Contents/Developer
+
       # Use the shell script to build the XCFramework
       - name: Build XCFramework
         run: ./buildFramework.sh
